@@ -458,12 +458,12 @@ button, input, select, textarea {
 .transformation-container {
   position: relative;
   width: 100%;
-  max-width: 680px;
+  max-width: 820px;
   margin: 2.5rem auto 0;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   background-color: var(--bg-inverse);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 975 / 706;
   user-select: none;
   touch-action: pan-y;
   box-shadow: var(--shadow-lg);

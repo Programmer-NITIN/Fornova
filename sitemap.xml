@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://fornovainterior.com/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://fornovainterior.com/assets/hero-luxury-bg.jpg</image:loc>
+      <image:title>Fornova Interior Architecture Atelier Vadodara</image:title>
+      <image:caption>Bespoke luxury interior architecture and turnkey residences in Vadodara, Gujarat</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fornovainterior.com/assets/1.jpeg</image:loc>
+      <image:title>Fornova Luxury TV Unit &amp; Living Room</image:title>
+      <image:caption>Turnkey living space transformation with bookmatched Italian stone and custom millwork</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fornovainterior.com/assets/WhatsApp%20Image%202026-09-17%20at%208.40.15%20PM.jpeg</image:loc>
+      <image:title>Fornova Hand-Carved Sacred Vastu Mandir</image:title>
+      <image:caption>Sacred Vastu-compliant prayer sanctuary in Vadodara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fornovainterior.com/assets/WhatsApp%20Image%202026-09-17%20at%209.35.17%20PM.jpeg</image:loc>
+      <image:title>Fornova 3-Phase Execution Metamorphosis</image:title>
+      <image:caption>Documented luxury apartment turnkey interior handover in Vasna-Bhayli</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fornovainterior.com/assets/fornova-logo-horizontal.svg</image:loc>
+      <image:title>Fornova Interior Official Brand Logo</image:title>
+    </image:image>
+  </url>
+</urlset>

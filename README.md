@@ -14,8 +14,7 @@
 - **100% Responsive Architecture**: Meticulously optimized for mobile devices (320px–480px, Samsung Galaxy, iPhone) and wide desktop displays without layout overflow.
 - **Hero & Conversion Funnel**: Primary **Book Consultation** CTA with smooth anchor scrolling straight to the inquiry form.
 - **Floating Luxury Action Dock**: Bottom-anchored action dock featuring live studio status pill (`[ 🟢 CONTACT ]`) and quick-access touch micro-containers for Direct Phone Call (`tel:`), WhatsApp Chat Desk, Instagram (`@fornova.interior`), and Consultation Booking.
-- **Interactive Before / After Transformation**: Draggable split-screen visualizer showcasing site progress from bare concrete shell to turnkey handover.
-- **Vadodara Investment Estimator**: Dynamic carpet area & scope calculator estimating turnkey budgets in Lakhs with customized WhatsApp inquiry pre-fill.
+- **Interactive Before / After Transformation**: Draggable split-screen visualizer showcasing site progress from 2D CAD architectural blueprints to turnkey reality.
 - **Lead Capture & Sheet Integration**: Connected to Google Apps Script (`exec` endpoint) logging leads to a Google Sheet with instant automated email alerts.
 
 ---
@@ -31,7 +30,7 @@
 ├── css/
 │   └── design-system.css    # Unified design tokens, luxury UI components, and mobile queries
 ├── js/
-│   └── app.js               # Estimator calculation, transformation slider, modal lightbox & form handler
+│   └── app.js               # Transformation slider, modal lightbox & form handler
 ├── index.html               # Main single-page application entry
 ├── GOOGLE_SHEET_SETUP.md    # Documentation & Apps Script code for Google Sheets lead sync
 ├── package.json             # Project dependencies & Vite scripts

@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initMobileNav();
   initTransformationSlider();
-  initCostEstimator();
   initPortfolio();
   initFaqAccordion();
   initVideoModal();
@@ -137,134 +136,7 @@ function initTransformationSlider() {
   });
 }
 
-/* -------------------------------------------------------------------------- */
-/* 4. INTERACTIVE VADODARA INTERIOR COST ESTIMATOR                            */
-/* -------------------------------------------------------------------------- */
-function initCostEstimator() {
-  const config = {
-    property: {
-      '2bhk': { name: '2 BHK Luxury Apartment', sqft: 950 },
-      '3bhk': { name: '3 BHK High-Rise Flat', sqft: 1550 },
-      '4bhk': { name: '4 BHK Sprawling Penthouse', sqft: 2400 },
-      'villa': { name: 'Independent Villa / Bungalow', sqft: 3600 },
-      'commercial': { name: 'Executive Office / Clinic', sqft: 1200 }
-    },
-    scope: {
-      'turnkey': { name: 'Complete Turnkey (Design + Materials + Civil + Execution)', factor: 1.0, days: '45 - 60' },
-      'woodwork': { name: 'Modular Kitchen & Custom Wardrobes', factor: 0.58, days: '30 - 40' },
-      'living': { name: 'Living, Dining & Foyer Architectural Redesign', factor: 0.38, days: '20 - 30' }
-    },
-    tier: {
-      'premium': { name: 'Premium (BWR Marine Ply, Acrylic/Laminate, Häfele Hardware)', rate: 1650 },
-      'ultra': { name: 'Ultra-Luxury (Italian Marble, Fluted Wall Cladding, PU Polish)', rate: 2450 },
-      'bespoke': { name: 'Royal Bespoke (Full Veneer, CNC Brass Inlays, Smart Automation)', rate: 3450 }
-    }
-  };
 
-  let selectedProperty = '3bhk';
-  let selectedScope = 'turnkey';
-  let selectedTier = 'ultra';
-
-  const propertyOptions = document.querySelectorAll('[data-property]');
-  const scopeOptions = document.querySelectorAll('[data-scope]');
-  const tierOptions = document.querySelectorAll('[data-tier]');
-
-  const priceDisplay = document.getElementById('calc-price-display');
-  const sqftDisplay = document.getElementById('calc-sqft-display');
-  const timelineDisplay = document.getElementById('calc-timeline-display');
-  const scopeNameDisplay = document.getElementById('calc-scope-display');
-  const whatsappBtn = document.getElementById('calc-whatsapp-btn');
-
-  function updateEstimate() {
-    const prop = config.property[selectedProperty];
-    const sc = config.scope[selectedScope];
-    const tr = config.tier[selectedTier];
-
-    if (!prop || !sc || !tr) return;
-
-    // Calculation in Rupees
-    const baseEstimate = prop.sqft * tr.rate * sc.factor;
-    const minLakhs = (baseEstimate * 0.95 / 100000).toFixed(1);
-    const maxLakhs = (baseEstimate * 1.08 / 100000).toFixed(1);
-
-    if (priceDisplay) {
-      priceDisplay.innerHTML = `₹${minLakhs} – ₹${maxLakhs} <span style="font-size: 1.25rem; font-family: var(--font-sans); font-weight: 500;">Lakhs*</span>`;
-    }
-    if (sqftDisplay) {
-      sqftDisplay.textContent = `Est. Carpet: ~${prop.sqft} sq.ft.`;
-    }
-    if (timelineDisplay) {
-      timelineDisplay.textContent = `${sc.days} Working Days`;
-    }
-    if (scopeNameDisplay) {
-      scopeNameDisplay.textContent = `${prop.name} • ${tr.name}`;
-    }
-
-    // Pre-fill WhatsApp Inquiry Link
-    if (whatsappBtn) {
-      const message = `Hello Fornova Interior Vadodara! I used your online estimator for my ${prop.name} (~${prop.sqft} sq.ft.) with ${sc.name} in ${tr.name} finish (Est. ₹${minLakhs} - ₹${maxLakhs} Lakhs). I'd like to schedule a site audit and consultation.`;
-      const encodedMsg = encodeURIComponent(message);
-      // WhatsApp link (official Vadodara studio desk)
-      whatsappBtn.href = `https://wa.me/919173531156?text=${encodedMsg}`;
-    }
-
-    // Connect "Book Free Site Audit" button to pre-fill the consultation form
-    const auditBtn = document.getElementById('calc-book-consultation-btn');
-    if (auditBtn) {
-      auditBtn.onclick = () => {
-        const formNotes = document.getElementById('client_notes');
-        const formService = document.getElementById('client_service');
-        if (formNotes) {
-          formNotes.value = `[Online Estimator Estimate]: ${prop.name} (~${prop.sqft} sq.ft.), ${sc.name}, ${tr.name} finish. Estimated Budget: ₹${minLakhs} – ₹${maxLakhs} Lakhs.`;
-        }
-        if (formService) {
-          if (selectedScope === 'woodwork') {
-            formService.value = 'Modular Kitchen & Wardrobes';
-          } else if (selectedProperty === 'villa') {
-            formService.value = 'Luxury Villa Architectural Interior';
-          } else {
-            formService.value = 'Full Turnkey Residential Interior';
-          }
-        }
-        const nameInput = document.getElementById('client_name');
-        if (nameInput) {
-          setTimeout(() => nameInput.focus(), 500);
-        }
-      };
-    }
-  }
-
-  // Bind clicks
-  propertyOptions.forEach(opt => {
-    opt.addEventListener('click', () => {
-      propertyOptions.forEach(o => o.classList.remove('active'));
-      opt.classList.add('active');
-      selectedProperty = opt.getAttribute('data-property');
-      updateEstimate();
-    });
-  });
-
-  scopeOptions.forEach(opt => {
-    opt.addEventListener('click', () => {
-      scopeOptions.forEach(o => o.classList.remove('active'));
-      opt.classList.add('active');
-      selectedScope = opt.getAttribute('data-scope');
-      updateEstimate();
-    });
-  });
-
-  tierOptions.forEach(opt => {
-    opt.addEventListener('click', () => {
-      tierOptions.forEach(o => o.classList.remove('active'));
-      opt.classList.add('active');
-      selectedTier = opt.getAttribute('data-tier');
-      updateEstimate();
-    });
-  });
-
-  // Initial Calculation Run
-  updateEstimate();
-}
 
 /* -------------------------------------------------------------------------- */
 /* 5. PORTFOLIO FILTERING & LIGHTBOX MODAL                                   */

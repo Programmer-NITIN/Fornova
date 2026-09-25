@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 
 # Host & Sitemap
-Host: https://fornovainterior.com
-Sitemap: https://fornovainterior.com/sitemap.xml
+Host: https://www.fornovainterior.com
+Sitemap: https://www.fornovainterior.com/sitemap.xml
